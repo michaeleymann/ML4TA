@@ -196,7 +196,6 @@ function whereYouLooking (){
 
     hSpeed = defaultPosition.left - ( nose.x - box.x );
     vSpeed = defaultPosition.top - ( box.y + box.height - nose.y );
-   // state = "x hSpeed: " + hSpeed.toFixed(2) + " // y vSpeed: " + vSpeed.toFixed(2)
     
     if ( !defaultPosition.left) {
         state = "click to set default value"
