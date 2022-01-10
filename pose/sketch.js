@@ -83,8 +83,8 @@ function draw (){
     stroke(colors[2])
     rect(0,0,width,height);
     pop();
-
-    text(state, width/2, 20,)  
+    textSize(17);
+    text(state, width/2, 25)  
     
     
      
@@ -204,7 +204,7 @@ function whereYouLooking (){
     vSpeed = defaultPosition.top - ( box.y + box.height - nose.y );
     
     if ( !defaultPosition.left) {
-        state = "click to set resting position /// press key to toggle video on/off"
+        state = "click to set resting position /// press key to toggle video /// cmd-R when behaving strangely"
     }
 }
 
