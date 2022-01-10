@@ -63,7 +63,7 @@ function draw(){
     
     
     // --- STEUERUNG --- //
-       if (label == "Looking Up") {
+    if (label == "Looking Up") {
         current.y -= speed;
     }
     if (label == "Looking Down") {
