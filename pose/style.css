@@ -1,0 +1,9 @@
+body {
+    background-color: #293241;
+}
+#content {
+    margin: auto;
+    padding: 20px;
+    width: 720px;
+    vertical-align: middle;
+}

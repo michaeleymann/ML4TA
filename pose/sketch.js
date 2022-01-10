@@ -3,13 +3,14 @@ let video;
 let detections;
 let nose = {x:-50, y:-50};
 let box = {x: 0, y:0 , width:0, height: 0};
-let state = "no face detected";
+let state = "no face detected (maybe because you are wearing a mask) ";
 let vMargin = 5;
 let hMargin = 10
 let vDir = "none";
 let hDir = "none";
 let vSpeed = 0;
 let hSpeed = 0;
+let bite;
 
 let defaultPosition = {};
 
@@ -36,7 +37,13 @@ const detection_options = {
 
 // ----- P5 SETUP -----
 function setup() {
-    createCanvas(720, 540);
+    canvas = createCanvas(720, 540);
+    canvas.parent("content")
+    noStroke();
+
+    //sound
+    soundFormats('mp3', 'ogg');
+    bite = loadSound('bite.mp3');
 
     // load up your video
     video = createCapture(VIDEO);
@@ -47,7 +54,6 @@ function setup() {
 
     current.x = width/2;
     current.y = height/2;
-
 }
 
 // ----- P5 DRAW -----
@@ -57,9 +63,12 @@ function draw (){
 
     if ( showVid == true) {
         push();
+        
         translate(video.width, 0);
         scale(-1, 1);
         image(video, 0, 0, video.width , video.height);
+        filter(GRAY);
+        stroke(0);
         strokeWeight(2);
         noFill();
         ellipse(nose.x, nose.y,30,30)
@@ -73,7 +82,6 @@ function draw (){
     strokeWeight(10);
     stroke(colors[2])
     rect(0,0,width,height);
-
     pop();
 
     text(state, width/2, 20,)  
@@ -83,10 +91,10 @@ function draw (){
     
     // --- STEUERUNG --- //
     if ( vSpeed) {
+
         current.y += vSpeed / 5;
         current.x += hSpeed / 15;
     }
-
 
     // --- ESSEN ZEICHNEN --- //
     if ( food.length < 1 ) {
@@ -121,6 +129,7 @@ function draw (){
      if ( abs(current.x-food[i].x)<5 && abs(current.y-food[i].y)<5) {
          food.shift();
          trailLength += 10;
+         bite.play()
      }
     }
 
@@ -181,9 +190,6 @@ function drawRect(){
     box.height = detections[0].alignedRect._box._height;
 }
 
-function mouseClicked() {
-    setDefault();
-}
 
 function setDefault() {
     defaultPosition.left = nose.x - box.x;
@@ -198,7 +204,14 @@ function whereYouLooking (){
     vSpeed = defaultPosition.top - ( box.y + box.height - nose.y );
     
     if ( !defaultPosition.left) {
-        state = "click to set default value"
+        state = "click to set resting position /// press key to toggle video on/off"
     }
 }
 
+function mouseClicked() {
+    setDefault();
+}
+
+function keyPressed() {
+    showVid = !showVid;
+}
