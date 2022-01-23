@@ -33,6 +33,31 @@ canvas {
   padding: 20px;
 }
 
+button {
+  background-color: #ffc0cb; /* Green */
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  color: #4b4b4b;
+  padding: 2px 4px;
+  margin: 2px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+select{
+  background-color: #ffc0cb; /* Green */
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  color: #4b4b4b;
+  padding: 2px 4px;
+  margin: 2px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
 
 
 input[type=range] {
