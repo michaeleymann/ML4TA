@@ -1,0 +1,1 @@
+{"inputUnits":[1],"outputUnits":1,"inputs":{"energy":{"dtype":"number","min":0.00107,"max":0.9990000000000001}},"outputs":{"song_popularity":{"dtype":"number","min":0,"max":100}},"isNormalized":true}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  </head>
+
+  <body>
+    <script src="sketch.js"></script>
+    
+   <!-- MAIN DIV -->
+    <div id="main">
+
+    <h1>Let's make a pop song</h1>
+    
+    <p>
+      Acousticness (0 bis 1)<br>
+      <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="acousticness">
+    </p>
+    <p>
+      Danceability (0 bis 1)<br>
+      <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="danceability">
+    </p>
+    <p>
+      Energy (0 bis 1)<br>
+      <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="energy">
+    </p>
+  
+    <p> <label >Tonart:</label><br>
+      <select id="key" >
+        <option value=0>C</option>
+        <option value=1>C#</option>
+        <option value=2>D</option>
+        <option value=3>D#</option>
+        <option value=4>E</option>
+        <option value=5>F</option>
+        <option value=6>F#</option>
+        <option value=7>G</option>
+        <option value=8>G#</option>
+        <option value=9>A</option>
+        <option value=10>A#</option>
+        <option value=11>B</option>
+      </select>
+    </p>
+    
+    
+    <p>
+      <button id="train">Modell trainieren</button>
+      <button id="predict">Vorhersage machen</button>
+      <button id="save">Speichern</button>
+    </p>
+
+    <p id= "result"></p>
+
+  </div>
+  <!-- END MAIN DIV-->
+  
+  </body>
+</html>
