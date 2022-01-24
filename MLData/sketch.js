@@ -88,7 +88,7 @@ function gotResults(error, result) {
   } else {
     let r = result[0].value
     console.log(r);
-    document.getElementById("result").innerHTML = r.toFixed(0) + " Rupies"
+    document.getElementById("result").innerHTML = r.toFixed(0) + " Rupees"
   }
 }
 
