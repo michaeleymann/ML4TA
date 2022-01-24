@@ -6,7 +6,7 @@ let pizza = {}
 
 
 function setup() {
-  //document.getElementById("main").style.display =  "none";
+  document.getElementById("main").style.display =  "none";
   myCanvas = createCanvas(200,200);
   myCanvas.parent("pizza");
 
