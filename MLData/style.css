@@ -33,6 +33,21 @@ canvas {
   padding: 20px;
 }
 
+#result {
+  width: calc(100%-20px);
+  height: 10px;
+  border: 1px solid;
+  border-color: #ffc0cb;
+  margin: 10px;
+}
+
+#bar {
+  width: 0%;
+  height: 10px;
+  background-color: #ffc0cb;
+  margin: 0px;
+}
+
 button {
   background-color: #ffc0cb; /* Green */
   border: none;

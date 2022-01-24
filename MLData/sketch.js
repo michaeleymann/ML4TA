@@ -28,7 +28,7 @@ function setup() {
   trainButton = select("#train");
   trainButton.mousePressed(function () {
     let trainOptions = {
-      epochs: 50,
+      epochs: 10,
     };
 
     model.train(trainOptions, whileTraining, finishedTraining);
@@ -79,7 +79,9 @@ function gotResults(error, result) {
   if (error) {
     console.error(error);
   } else {
-    console.log(result[0].value);
+    let r = result[0].value
+    console.log(r);
+    document.getElementById("bar").setAttribute("style",`width:${r}%`);
   }
 }
 
