@@ -22,15 +22,15 @@
     <h1>Let's make a pop song</h1>
     
     <p>
-      Acousticness (0 bis 1)<br>
+      Acousticness<br>
       <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="acousticness">
     </p>
     <p>
-      Danceability (0 bis 1)<br>
+      Danceability<br>
       <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="danceability">
     </p>
     <p>
-      Energy (0 bis 1)<br>
+      Energy<br>
       <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="energy">
     </p>
   
@@ -57,8 +57,10 @@
       <button id="predict">Vorhersage machen</button>
       <button id="save">Speichern</button>
     </p>
-
-    <p id= "result"></p>
+    <p>
+      Track Popularity Prediction:
+    </p>
+    <div id= "result"><div id="bar"></div></div>
 
   </div>
   <!-- END MAIN DIV-->
