@@ -17,51 +17,51 @@
     <script src="sketch.js"></script>
     
    <!-- MAIN DIV -->
-    <div id="main">
+  <div id="training">
+     <button id="train">Modell trainieren</button>
+  </div>
 
-    <h1>Let's make a pop song</h1>
+  <div id="main">
     
+
+    <h1>Mumbai Pizza Price Predictor</h1>
+    <div id="pizza">
+    </div>
     <p>
-      Acousticness<br>
-      <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="acousticness">
+      Diameter 5 to 20 inch<br>
+      <input type="range" min="5" max="20" step="0.1" value="10" class="slider" id="diameter">
     </p>
-    <p>
-      Danceability<br>
-      <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="danceability">
+    <p>Topping:
+      <select id="topping">
+        <option value="chicken">Chicken</option>
+        <option value="mushrooms">Mushrooms</option>
+        <option value="mozzarella">Mozarella</option>
+        <option value="papperoni">Pepperoni</option>
+        <option value="smoked beef">Smoked Beef</option>
+        <option value ="tuna">Tuna</option>
+      </select>
     </p>
-    <p>
-      Energy<br>
-      <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider" id="energy">
+
+    <p>Extra Cheese?
+      <select id="cheese">
+        <option value="yes">Yes!</option>
+        <option value="no">No.</option>
+      </select>
     </p>
-  
-    <p> <label >Tonart:</label><br>
-      <select id="key" class="custom-select">
-        <option value=0>C</option>
-        <option value=1>C#</option>
-        <option value=2>D</option>
-        <option value=3>D#</option>
-        <option value=4>E</option>
-        <option value=5>F</option>
-        <option value=6>F#</option>
-        <option value=7>G</option>
-        <option value=8>G#</option>
-        <option value=9>A</option>
-        <option value=10>A#</option>
-        <option value=11>B</option>
+
+    <p>Extra Sauce?
+      <select id="sauce">
+        <option value="yes">Yes!</option>
+        <option value="no">No.</option>
       </select>
     </p>
     
-    
     <p>
-      <button id="train">Modell trainieren</button>
       <button id="predict">Vorhersage machen</button>
-      <button id="save">Speichern</button>
     </p>
-    <p>
-      Track Popularity Prediction:
+    <p style="font-weight: 800; font-size: 15px;">
+      The Price will be:<br><span id="result"></span>
     </p>
-    <div id= "result"><div id="bar"></div></div>
-
   </div>
   <!-- END MAIN DIV-->
   

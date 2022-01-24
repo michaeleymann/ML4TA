@@ -15,7 +15,7 @@ html, body {
   padding: 20px;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 h1 {
@@ -28,6 +28,9 @@ canvas {
 }
 
 #main {
+  text-align: center;
+
+  width: calc(100% - 40px);
   border: 1px solid;
   border-color: #ffc0cb;
   padding: 20px;
@@ -36,9 +39,12 @@ canvas {
 #result {
   width: calc(100%-20px);
   height: 10px;
-  border: 1px solid;
-  border-color: #ffc0cb;
   margin: 10px;
+  font-size: 27px;
+}
+
+#training {
+  text-align: center;
 }
 
 #bar {
@@ -46,6 +52,15 @@ canvas {
   height: 10px;
   background-color: #ffc0cb;
   margin: 0px;
+}
+
+#pizza {
+  position:relative;
+  left: calc(100%/2 - 100px);
+  height: 200px;
+  width: 200px;
+
+
 }
 
 button {
